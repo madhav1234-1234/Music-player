@@ -39,7 +39,7 @@
           const next =document.getElementById('next');
 
 
-   const songs = [
+   const musicList = [
     {
       name: "Mast Magan",
       artist: "Arijit Singh",
@@ -108,25 +108,25 @@
 
           //changing Music Data
 
-          const loadSong =(songs)=>{
-              title.textContent = songs.name;
-              artist.textContent = songs.artist;
-              music.src = "songs/" + songs.src + ".mp3";
-              img.src= "images/" + songs.img + ".jpg"
+          const loadSong =(musicList)=>{
+              title.textContent = musicList.name;
+              artist.textContent = musicList.artist;
+              music.src = "songs/" + musicList.src + ".mp3";
+              img.src= "images/" + musicList.img + ".jpg"
           }
 
           songsIndex = 0;
           // loadSong(songs[2]);
          
            const nextSongs = () => {
-               songsIndex = (songsIndex + 1) % songs.length;
-               loadSong(songs[songsIndex]);
+               songsIndex = (songsIndex + 1) % musicList.length;
+               loadSong(musicList[songsIndex]);
                playMusic();
            };
 
            const prevSongs = () => {
-               songsIndex = (songsIndex - 1 +  songs.length) % songs.length;
-               loadSong(songs[songsIndex]);
+               songsIndex = (songsIndex - 1 +  musicList.length) % musicList.length;
+               loadSong(musicList[songsIndex]);
                playMusic();
            };
             
